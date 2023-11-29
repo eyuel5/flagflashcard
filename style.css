@@ -19,7 +19,8 @@ body {
 
 .row {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
     align-items: center;
     border: 4px solid rgba(42, 165, 48, 0.514);
 }
@@ -27,6 +28,8 @@ body {
 .flashcard {
     background-color: aliceblue;
     width: 30%;
+    min-width: 200px; /* Set a minimum width for the flashcard */
+    flex: 0 0 calc(30% - 2em); /* Take 30% of the container width, accounting for padding */
     height: 10em;
     padding: 2em;
     margin: 1em 0;
@@ -42,4 +45,19 @@ img {
 
 footer {
     border: 4px solid rgba(212, 192, 8, 0.74);
+}
+
+/* Media queries for responsive design */
+@media (max-width: 1024px) {
+    .flashcard {
+        width: 45%; /* Display 2 cards in one row on medium-sized screens */
+        flex: 0 0 calc(45% - 2em);
+    }
+}
+
+@media (max-width: 600px) {
+    .flashcard {
+        width: 100%; /* Display 1 card in one row on small screens */
+        flex: 0 0 calc(100% - 2em);
+    }
 }
