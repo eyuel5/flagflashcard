@@ -26,6 +26,7 @@ body {
 }
 
 .flashcard {
+    position: relative;
     background-color: aliceblue;
     width: 30%;
     min-width: 200px; /* Set a minimum width for the flashcard */
@@ -33,7 +34,10 @@ body {
     height: 10em;
     padding: 2em;
     margin: 1em 0;
+    border-left: 2px solid blue;
+    box-shadow: 5px 5px 20px #ddd;
 }
+
 
 img {
     max-width: 100%;
